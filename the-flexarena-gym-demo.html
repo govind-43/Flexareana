@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The FlexArena Gym — premium fitness training in Sector 16, Faridabad. Train stronger, move better and build consistency.">
+<title>The FlexArena Gym | Sector 16, Faridabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080909; --panel:#111313; --panel2:#171a1a; --text:#f5f5f2; --muted:#a4aaa7;
+  --accent:#c9ff3d; --accent2:#e6ff8c; --line:rgba(255,255,255,.09);
+  --max:1180px; --shadow:0 25px 80px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800;color:var(--accent)}
+.eyebrow:before{content:"";width:24px;height:2px;background:var(--accent)}
+h1,h2,h3,.logo,.display{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;line-height:.95}
+h2{font-size:clamp(42px,6vw,76px);letter-spacing:-.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:5px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;transition:.25s}
+.btn-primary{background:var(--accent);color:#080909}
+.btn-primary:hover{transform:translateY(-2px);background:var(--accent2)}
+.btn-dark{border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.3);backdrop-filter:blur(8px)}
+.btn-dark:hover{border-color:var(--accent);color:var(--accent)}
+header{position:absolute;z-index:10;top:0;left:0;right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:27px;font-weight:800;letter-spacing:.02em}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:30px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.navlinks a{opacity:.82}.navlinks a:hover{opacity:1;color:var(--accent)}
+.nav-cta{display:flex;gap:10px}
+.menu{display:none;background:none;border:0;color:white;font-size:26px}
+.hero{min-height:780px;position:relative;display:flex;align-items:center;overflow:hidden;background:
+linear-gradient(90deg,rgba(4,5,5,.96) 0%,rgba(4,5,5,.78) 43%,rgba(4,5,5,.2) 100%),
+linear-gradient(0deg,#080909 0%,transparent 32%),
+url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:160px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.hero-content{position:relative;z-index:2;padding-top:95px;max-width:680px}
+.hero h1{font-size:clamp(68px,10vw,132px);margin:18px 0 22px;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-copy{max-width:570px;color:#c2c6c4;font-size:16px;margin-bottom:30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:42px;margin-top:54px;padding-top:23px;border-top:1px solid rgba(255,255,255,.12)}
+.stat strong{display:block;font-family:"Barlow Condensed";font-size:34px;color:white}
+.stat span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+section{padding:105px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:45px}
+.section-head p{max-width:440px;color:var(--muted);font-size:14px}
+.about-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
+.about-img{height:570px;object-fit:cover;border-radius:6px;box-shadow:var(--shadow)}
+.about-copy h2{margin:16px 0 25px}
+.about-copy>p{color:var(--muted);max-width:560px}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.feature{padding:19px;background:var(--panel);border:1px solid var(--line);border-radius:5px}
+.feature b{font-size:13px}.feature small{display:block;color:var(--muted);margin-top:5px;font-size:11px}
+.programs{background:#0d0f0f}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.program{min-height:355px;position:relative;overflow:hidden;border-radius:5px;background:#111}
+.program img{height:100%;object-fit:cover;transition:.5s}
+.program:hover img{transform:scale(1.04)}
+.program:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.9))}
+.program-info{position:absolute;z-index:2;left:25px;right:25px;bottom:24px}
+.program-info h3{font-size:31px;margin-bottom:7px}
+.program-info p{font-size:12px;color:#c5c9c7}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:245px 245px;gap:12px}
+.gallery img{height:100%;object-fit:cover;border-radius:5px}
+.gallery img:first-child{grid-row:span 2}
+.cta{padding:0 0 105px}
+.cta-box{position:relative;overflow:hidden;min-height:340px;border-radius:7px;padding:65px;display:flex;align-items:center;background:
+linear-gradient(90deg,rgba(5,6,6,.96),rgba(5,6,6,.52)),
+url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1800&q=85") center/cover}
+.cta-box h2{font-size:clamp(48px,6vw,78px);max-width:670px}
+.cta-box p{color:#bfc3c0;margin:18px 0 26px;max-width:530px}
+.contact{background:#0d0f0f}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.contact h2{margin:15px 0 22px}
+.contact-copy{color:var(--muted);max-width:470px}
+.details{margin-top:30px;display:grid;gap:15px}
+.detail{display:flex;gap:13px;align-items:flex-start}
+.detail-icon{width:38px;height:38px;display:grid;place-items:center;background:rgba(201,255,61,.09);color:var(--accent);border-radius:5px}
+.detail b{font-size:12px;text-transform:uppercase;letter-spacing:.08em}.detail span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.map{min-height:430px;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:
+linear-gradient(rgba(201,255,61,.04),rgba(201,255,61,.04)),
+url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1400&q=85") center/cover;position:relative}
+.map-card{position:absolute;left:22px;bottom:22px;right:22px;background:rgba(8,9,9,.92);backdrop-filter:blur(12px);padding:21px;border:1px solid var(--line);border-radius:6px}
+.map-card b{font-family:"Barlow Condensed";font-size:26px;text-transform:uppercase}.map-card p{color:var(--muted);font-size:12px;margin:4px 0 15px}
+footer{padding:27px 0;border-top:1px solid var(--line);font-size:11px;color:#777d79}
+.footer{display:flex;justify-content:space-between;gap:20px}.footer span{color:var(--accent)}
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:20;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:25px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+@media(max-width:850px){
+ .navlinks,.nav-cta{display:none}.menu{display:block}
+ .hero{min-height:720px;background:linear-gradient(90deg,rgba(4,5,5,.88),rgba(4,5,5,.38)),url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=85") center/cover}
+ .hero h1{font-size:76px}.hero-stats{gap:22px}.stat strong{font-size:28px}
+ .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}.about-img{height:430px}
+ .program-grid{grid-template-columns:1fr}.program{min-height:320px}
+ .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px}.gallery img:first-child{grid-row:span 2}
+ .cta-box{padding:42px 28px}.section-head{display:block}.section-head p{margin-top:15px}
+}
+@media(max-width:520px){
+ .container{width:min(var(--max),calc(100% - 28px))}
+ section{padding:75px 0}.hero{min-height:690px}.hero h1{font-size:63px}
+ .hero-copy{font-size:14px}.hero-stats{margin-top:38px;gap:15px}.stat strong{font-size:24px}
+ .feature-list{grid-template-columns:1fr}.gallery{grid-template-columns:1fr;grid-template-rows:260px 180px 180px}.gallery img:first-child{grid-row:auto}
+ .cta{padding-bottom:75px}.cta-box{min-height:390px}.contact{padding-top:75px}
+ .footer{display:block}.footer div+div{margin-top:8px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">FLEX<span>ARENA</span></a>
+    <nav class="navlinks">
+      <a href="#about">About</a><a href="#training">Training</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta"><a class="btn btn-primary" href="tel:+919711719500">Call Now</a></div>
+    <button class="menu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-content">
+   <span class="eyebrow">Sector 16 • Faridabad</span>
+   <h1>BUILD<br><em>YOUR</em><br>STRONGEST.</h1>
+   <p class="hero-copy">A focused training environment for people who want to get stronger, move better and stay consistent. Train with quality equipment and dedicated guidance at The FlexArena Gym.</p>
+   <div class="actions">
+     <a class="btn btn-primary" href="https://wa.me/919711719500?text=Hi%20The%20FlexArena%20Gym%2C%20I%27d%20like%20to%20know%20about%20membership." target="_blank">WhatsApp Us ↗</a>
+     <a class="btn btn-dark" href="#contact">Get Directions ↓</a>
+   </div>
+   <div class="hero-stats">
+     <div class="stat"><strong>4.8★</strong><span>Google rating</span></div>
+     <div class="stat"><strong>3,600</strong><span>Sq. ft. facility</span></div>
+     <div class="stat"><strong>5:30 AM</strong><span>Weekday opening</span></div>
+   </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container about-grid">
+  <img class="about-img" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1300&q=85" alt="Modern gym interior">
+  <div class="about-copy">
+   <span class="eyebrow">THE FLEXARENA STANDARD</span>
+   <h2>TRAIN WITH<br>INTENTION.</h2>
+   <p>The FlexArena Gym is a fitness center in Sector 16, Faridabad, designed for beginners and experienced fitness enthusiasts alike. The facility is listed with strength and cardio training areas, training support and member-focused amenities.</p>
+   <div class="feature-list">
+    <div class="feature"><b>Quality Equipment</b><small>Strength & cardio focused training environment.</small></div>
+    <div class="feature"><b>Trainer Support</b><small>Guidance to help you train with better consistency.</small></div>
+    <div class="feature"><b>Comfort First</b><small>AC, drinking water, washrooms and changing access.</small></div>
+    <div class="feature"><b>Easy To Reach</b><small>Above Domino's, HUDA Market, Sector 16.</small></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="programs" id="training">
+ <div class="container">
+  <div class="section-head">
+   <div><span class="eyebrow">WHAT YOU CAN TRAIN</span><h2>YOUR GOAL.<br>YOUR WORK.</h2></div>
+   <p>Build a routine around the outcome you want. Speak with the gym team about the right training approach for your current level and goals.</p>
+  </div>
+  <div class="program-grid">
+   <article class="program">
+    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1a?auto=format&fit=crop&w=1000&q=85" alt="Strength training">
+    <div class="program-info"><h3>Strength</h3><p>Build strength, technique and training consistency.</p></div>
+   </article>
+   <article class="program">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85" alt="Gym cardio and equipment">
+    <div class="program-info"><h3>Conditioning</h3><p>Improve stamina and support a stronger overall routine.</p></div>
+   </article>
+   <article class="program">
+    <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=1000&q=85" alt="Fitness training">
+    <div class="program-info"><h3>Fitness</h3><p>Work toward weight management, mobility and general fitness.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="container">
+  <div class="section-head">
+   <div><span class="eyebrow">THE SPACE</span><h2>COME IN.<br>LOCK IN.</h2></div>
+   <p>A premium visual layout for the demo. Replace these stock images with the gym's own Google/Instagram photographs before delivering the final website.</p>
+  </div>
+  <div class="gallery">
+   <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1400&q=85" alt="Gym floor">
+   <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85" alt="Gym equipment">
+   <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1000&q=85" alt="Strength training equipment">
+   <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=1000&q=85" alt="Fitness training">
+   <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1a?auto=format&fit=crop&w=1000&q=85" alt="Workout area">
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container">
+  <div class="cta-box">
+   <div>
+    <span class="eyebrow">READY TO START?</span>
+    <h2>STOP THINKING.<br>START TRAINING.</h2>
+    <p>Ask about membership, training options and the best time to visit the gym.</p>
+    <a class="btn btn-primary" href="https://wa.me/919711719500?text=Hi%20The%20FlexArena%20Gym%2C%20I%27d%20like%20to%20visit%20and%20know%20about%20membership." target="_blank">Message on WhatsApp ↗</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container contact-grid">
+  <div>
+   <span class="eyebrow">FIND THE GYM</span>
+   <h2>YOUR NEXT<br>SESSION IS HERE.</h2>
+   <p class="contact-copy">Conveniently located above Domino's in HUDA Market, Sector 16, Faridabad.</p>
+   <div class="details">
+    <div class="detail"><div class="detail-icon">⌖</div><div><b>Address</b><span>SCO 24, 2nd Floor, Huda Market, above Domino's, HUDA Staff Colony, Sector 16, Faridabad, Haryana 121002</span></div></div>
+    <div class="detail"><div class="detail-icon">☎</div><div><b>Phone</b><span><a href="tel:+919711719500">+91 97117 19500</a></span></div></div>
+    <div class="detail"><div class="detail-icon">◷</div><div><b>Hours</b><span>Mon–Sat: 5:30 AM–11:00 PM<br>Sun: 8:00 AM–4:00 PM</span></div></div>
+   </div>
+  </div>
+  <div class="map">
+   <div class="map-card">
+    <b>The FlexArena Gym</b>
+    <p>SCO 24, 2nd Floor • HUDA Market • Sector 16 • Faridabad</p>
+    <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=The%20FlexArena%20Gym%2C%20Sector%2016%2C%20Faridabad" target="_blank">Open in Google Maps ↗</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<a class="float-wa" href="https://wa.me/919711719500?text=Hi%20The%20FlexArena%20Gym%2C%20I%27d%20like%20to%20know%20more." target="_blank" aria-label="WhatsApp">◉</a>
+
+<footer>
+ <div class="container footer">
+  <div>© 2026 The FlexArena Gym. Demo website concept.</div>
+  <div>Designed for <span>strength • consistency • progress</span></div>
+ </div>
+</footer>
+
+<script>
+const menu=document.querySelector('.menu');
+const nav=document.querySelector('.navlinks');
+menu.addEventListener('click',()=>{nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.position='absolute';nav.style.top='82px';nav.style.left='0';nav.style.right='0';nav.style.padding='22px';nav.style.background='#080909';nav.style.flexDirection='column';nav.style.borderBottom='1px solid rgba(255,255,255,.1)'});
+</script>
+</body>
+</html>
